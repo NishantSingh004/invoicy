@@ -1,0 +1,197 @@
+article{
+  min-height: 100vh;
+  background: #f9efe6;
+}
+.subnav{
+  margin-bottom: 5rem;
+  background: #f9efe6;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-left: 50px;
+  padding-top: 5px;
+  height: 8vh;
+}
+.container{
+  width: 500px;
+  height: 100%;
+  padding: 20px;
+    background: #ebfffc;
+  border-radius: 10px;
+  /* border: 1px solid red; */
+}
+h5{
+  margin-bottom: 20px;
+}
+.checkbox-container{
+  display: flex;
+  justify-content: space-between;
+}
+#checkbox{
+  width: 20px;
+  height: 12px;
+  cursor: pointer;
+}
+i{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#business-date{
+  width: 100%;
+  border: 1px solid lightgray;
+}
+.phone-number-wrapper {
+  font-family: Arial, sans-serif;
+}
+input{
+  width: 100%;
+  background: #FFFAFA;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.4rem;
+  font-size: 15px;
+  outline: none;
+}
+option{
+  background-color: #FFFAFA;
+}
+small, input{
+  margin-bottom: 15px;
+}
+
+label{
+  display: block;
+  margin-bottom:6px ;
+}
+small{
+  display: block;
+}
+.country-currency{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.phone-number-wrapper label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+}
+
+.phone-input select {
+  border: 1px solid #ccc;
+  background-color: #FFFAFA;
+  border-radius: 5px 0 0 5px;
+  padding: 0.5rem;
+  font-size: 16px;
+  width: 100px;
+  text-align: center;
+  outline: none;
+}
+
+.phone-input input {
+  border: 1px solid #ccc;
+  border-radius:4px;
+  padding: 0.4rem;
+  margin-top: 15px;
+  font-size: 15px;
+  outline: none;
+  flex: 1;
+}
+
+.phone-input select option {
+  text-align: start;
+  font-size: 14px;
+  padding: 5px;
+}
+#country, #currency{
+  background-color: #FFFAFA ;
+  border-radius: 4px;
+  padding: 0.4rem;
+  margin-top: 14px;
+  font-size: 15px;
+}
+button{
+  background: #ef7a54;
+  color: white;
+  border:1px solid #ef7a54;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+.error{
+  font-size: 0.7rem;
+  padding: 5px;
+  color: red;
+}
+span{
+  color: red;
+}
+button:hover{
+  background: white;
+  color: #ef7a54;
+}
+
+
+
+@media screen and (min-width: 128px) and (max-width: 900px) {
+
+  article{
+    height: auto;
+    padding: 20px;
+  }
+  .main-container{
+    width: 100%;
+    height: 100%;
+    
+  }
+  .container{
+    padding-top: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: whitesmoke;
+    border-radius: 10px;
+  }
+  .checkbox-container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .country-currency{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  h4{
+    font-size: 1.2rem;
+  }
+  .select-country{
+    width: 294px;
+    border-radius:10px ;
+    margin-bottom: 15px;
+  }
+  #country, #currency{
+    width: 100%;
+  }
+  #country, #currency select{
+    width: 90%;
+   
+  }
+ #currency, #country select{
+    width: 90%;
+    
+  }
+  .select-currency{
+    width: 294px;
+    margin-bottom: 15px;
+  }
+  .phone-input input {
+    width: 100%;
+  }
+}

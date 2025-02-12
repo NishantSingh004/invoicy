@@ -1,0 +1,53 @@
+<article>
+  <div class="container">
+    <div class="second-ontainer fade-in-start" appScrollAnimation>
+      <div class="detail fade-in-start" appScrollAnimation>
+        <p >
+          Hello <span>{{ namereceived }}</span>
+        </p>
+        <p>
+          Welcome Back to <span>{{ businessName }}</span>
+        </p>
+        <h2>Getting Started</h2>
+      </div>
+      <div class="boxes">
+        
+        <div class="box">
+          <div class="subBox">
+            <h5>Invoice</h5>
+            <small>
+              Effortlessly create and share professional invoices via Email and WhatsApp.
+            </small>
+            <img src="image/invoice3.webp" alt="invoice" />
+            <a (click)="invoice()" routerLink="invoice-form"
+              ><button>Create New Invoice</button></a
+            >
+          </div>
+        </div>
+        <div class="box">
+          <div class="subBox">
+            <h5>Quotations</h5>
+            <small>
+              "Seal the deal with customized quotes that captivate and win clients."
+            </small>
+            <img src="image/quotation.webp" alt="quotation" />
+            <a type="next" (click)="quotation()" routerLink="quotation-form"
+              ><button>Create New Quotation</button></a
+            >
+          </div>
+        </div>
+        <div class="box">
+          <div class="subBox">
+            <h5>Complete Your Profile</h5>
+            <small>
+              Showcase your expertise by completing your profile for a strong
+              professional presence.
+            </small>
+            <img src="image/profile.webp" alt="profile" />
+            <a><button>Complete Your Profile</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

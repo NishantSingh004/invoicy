@@ -1,0 +1,144 @@
+header {
+  height: 600px;
+  background: #f9efe6;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1%;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  width: 55%;
+  color: #055346;
+}
+
+.header h1 {
+  font-size: 2.6rem;
+  width: 100%;
+  margin-bottom: 25px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: gray;
+  width: 90%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.btns a {
+  background: #ef7a54;
+  color: white;
+  border:1px solid #ef7a54;
+  font-weight: bold;
+  padding: 20px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btns a:hover {
+  background: white;
+  color: #ef7a54;
+}
+
+.header-img {
+  width: 40%;
+  height: 70%;
+  animation: slideInRight 1.5s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.header-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px 100px 10px 100px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.header-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media screen and (min-width: 128px) and (max-width: 900px) {
+  header {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .container {
+    /* flex-direction: column; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap-reverse;
+  }
+
+  .header {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .header h1{
+    font-size: 1.8rem;
+  }
+  .header p{
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.3rem;
+    width: 100%;
+  }
+  .header-img {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .btns a {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}

@@ -1,0 +1,349 @@
+@if(addRows){
+<app-add-column
+  class="app"
+  (addGstRows)="onAddRows($event)"
+  (addNoGstRows)="onNonGstRow($event)"
+  (save)="cancel()"
+  [taxRow]="getTaxEvent()"
+/>
+} @if(showBusiness){
+<app-billed-by (business)="onBusinessAdded($event)" (close)="onBilleClose()" />
+} @if(showBilledTo){
+<app-billed-to
+  (businessData)="onBilledtoAdded($event)"
+  (done)="onBilleClosed()"
+/>
+} @if(tax){
+<app-tax (taxUsed)="taxsUsed($event)" (taxSave)="onTaxSave()" />
+}
+<article>
+  <div class="header">
+    <h3>Create New Quotation</h3>
+  </div>
+  <div class="container">
+    <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+      <div class="heading"><h2>Quotation</h2></div>
+
+      <div class="head">
+        <div class="first-head">
+          <div class="invoice-no">
+            <label for="number">Quotation No*</label>
+            <input type="text" id="number" formControlName="invoiceNo" />
+          </div>
+          <div class="invoice-Date">
+            <label for="date">Quotation Date*</label>
+            <input type="date" id="date" formControlName="invoiceDate" />
+          </div>
+          <div class="Due-Date">
+            <label for="due">Due Date*</label>
+            <input type="date" id="due" formControlName="dueDate" />
+          </div>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="billed-by">
+          <label for="billed">Quotation From</label>
+          <div class="custom-dropdown">
+            <div class="selected">
+              <li (click)="addBusiness()"><a>Add Business</a></li>
+            </div>
+          </div>
+          <div class="business-details">
+            <span class="b-heading">Business details</span>
+            <div class="name">
+              <label for="">Name</label>
+              <span>{{ business }}</span>
+            </div>
+            <div class="add-address">
+              <span>Address</span>
+              <span
+                >{{ city }}{{ city && country ? ", " : "" }}{{ country }}</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="billed-to">
+          <label for="billed">Quotation For</label>
+          <div class="custom-dropdown">
+            <div class="selected">
+              <li (click)="addBusinessData()"><a>Add Business</a></li>
+            </div>
+          </div>
+          <div class="business-details">
+            <span class="b-heading">Business details</span>
+            <div class="name">
+              <label for="">Name</label>
+              <span>{{ businessname }}</span>
+            </div>
+            <div class="add-address">
+              <span>Address</span>
+              <span>{{ town }}{{ town && count ? ", " : "" }}{{ count }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="checkbox" (click)="addShipping()" />
+        <label for="checkbox">Add Shipping Details</label>
+      </div>
+      @if(shipping){
+      <div class="Shipping-Details" formGroupName="shippingDetails">
+        <div class="shipping-container">
+          <div class="shipping">
+            <div class="shipped-from" formGroupName="shippedFrom">
+              <h3>Shipped From</h3>
+              <input type="text" placeholder="Bussiness/Freelancer Name" />
+              <div class="select-country">
+                <select id="country" formControlName="country">
+                  <option value="" disabled>Select your Country</option>
+                  @for(country of countries; track country){
+                  <option value="">{{ country }}</option>
+                  }
+                </select>
+              </div>
+              <div class="address">
+                <input
+                  type="text"
+                  placeholder="Address"
+                  formControlName="address"
+                />
+              </div>
+              <div class="city">
+                <div class="city-town">
+                  <input
+                    type="text"
+                    placeholder="city/town"
+                    formControlName="city"
+                  />
+                </div>
+                <div class="pin">
+                  <input
+                    type="text"
+                    placeholder="Postal Code"
+                    formControlName="postalCode"
+                  />
+                </div>
+              </div>
+              <div class="state">
+                <input
+                  type="text"
+                  placeholder="State"
+                  formControlName="state"
+                />
+              </div>
+            </div>
+            <div class="shipped-to" formGroupName="shippedTo">
+              <h3>Shipped To</h3>
+              <input
+                type="text"
+                placeholder="Client's business name"
+                formControlName="name"
+              />
+              <div class="select-country">
+                <select formControlName="country" id="country">
+                  <option value="" disabled>Select your Country</option>
+                  @for(country of countries; track country){
+                  <option value="">{{ country }}</option>
+                  }
+                </select>
+              </div>
+              <div class="address">
+                <input
+                  type="text"
+                  placeholder="Address"
+                  formControlName="address"
+                />
+              </div>
+              <div class="city">
+                <div class="city-town">
+                  <input
+                    type="text"
+                    placeholder="city/town"
+                    formControlName="city"
+                  />
+                </div>
+                <div class="pin">
+                  <input
+                    type="text"
+                    placeholder="Postal Code"
+                    formControlName="postalCode"
+                  />
+                </div>
+              </div>
+              <div class="state">
+                <input
+                  type="text"
+                  placeholder="State"
+                  formControlName="state"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+
+      <div class="currency-column">
+        <div class="currency">
+          <label for="currency">Currency</label>
+          <div class="select-currency">
+            <select
+              name="curren"
+              id="currency"
+              [(ngModel)]="curren"
+              formControlName="currency"
+            >
+              <option value="" disabled>select your currency</option>
+              @for(currencies of currency; track currencies){
+              <option [value]="currencies">{{ currencies }}</option>
+              }
+            </select>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <a><button type="button" (click)="addTax()">Add Column</button></a>
+          </div>
+          <div class="row">
+            <a><button type="button" (click)="addRow()">Add rows</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="sub-table">
+        @if(igst){
+        <div class="main-table">
+          <div class="table">
+            <table>
+              <thead>
+                <th>Items</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Amount</th>
+                <th>GST Rate</th>
+                <th>IGST</th>
+                <th>TOTAL</th>
+              </thead>
+              <tbody>
+                @for( row of rowAdded; track row.id){
+                <tr>
+                  <td>{{ row.items }}</td>
+                  <td>{{ row.quantity }}</td>
+                  <td>{{ curren }} {{ row.rate }}</td>
+                  <td>{{ row.amount }}</td>
+                  <td>{{ row.gst }}{{ row.gst ? "%" : "" }}</td>
+                  <td>{{ row.igst }}</td>
+                  <td>{{ row.igstTotal }}</td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        }@if(cgst){
+        <div class="main-table">
+          <div class="table">
+            <table>
+              <thead>
+                <th>Items</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Amount</th>
+                <th>GST Rate</th>
+                <th>CGST</th>
+                <th>SGST</th>
+                <th>TOTAL</th>
+              </thead>
+              <tbody>
+                @for( row of rowAdded; track row.id){
+                <tr>
+                  <td>{{ row.items }}</td>
+                  <td>{{ row.quantity }}</td>
+                  <td>{{ curren }} {{ row.rate }}</td>
+                  <td>{{ row.amount }}</td>
+                  <td>{{ row.gst }}</td>
+                  <td>{{ row.cgstSgst }}</td>
+                  <td>{{ row.cgstSgst }}</td>
+                  <td>{{ row.cgstSgstTotal }}</td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        }@if(none){
+        <div class="main-table">
+          <div class="table">
+            <table>
+              <thead>
+                <th>Items</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Amount</th>
+                <th>TOTAL</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let row of nonGst">
+                  <td>{{ row.nonGst_items }}</td>
+                  <td>{{ row.nongst_quantity }}</td>
+                  <td>{{ curren }} {{ row.nongst_rate }}</td>
+                  <td>{{ row.nongst_amount }}</td>
+                  <td>{{ row.nongst_amount }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        }
+      </div>
+
+      <div class="total">
+        <div class="sub-total">
+          <div class="amount">
+            <strong>Total ( {{ curren }} )</strong>
+          </div>
+          @if(none){
+          <div class="num-amount">
+            <strong>{{ nonGstTotal }}</strong>
+          </div>
+
+          }@else {
+          <div class="num-amount">
+            <strong>{{ grandTotal }}</strong>
+          </div>
+          }
+        </div>
+      </div>
+
+      @if(!condition){
+      <div class="condition">
+        <a class="btn" (click)="conditions()">
+          <i class="bi bi-plus"></i><span>Add Terms & Conditions</span>
+        </a>
+      </div>
+      } @if(condition){
+      <div class="main-term-condition">
+        <div class="terms">
+          <div class="term"><h4>Terms and Conditions</h4></div>
+          <div class="delete">
+            <a (click)="delete()"><i class="bi bi-x"></i></a>
+          </div>
+        </div>
+
+        <div class="conditions">
+          <small> 01 Applicable taxes will be extra. </small>
+        </div>
+        <div class="second-condistions">
+          <small>02 Work will resume after advance payment..</small>
+        </div>
+      </div>
+      }
+
+      <div class="button">
+        <button (click)="generatePDF()">Save & Continue</button>
+      </div>
+    </form>
+  </div>
+</article>

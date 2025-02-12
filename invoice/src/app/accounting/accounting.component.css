@@ -1,0 +1,134 @@
+.header{
+  height: 600px;
+  background:#ffffff;
+padding-top:40px;
+margin-top: 3rem;
+}
+.fade-in-start {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+/* Animation class (added dynamically) */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 5px;
+}
+.main-heading{
+  width: 50%;
+  
+}
+.heading{
+  width: 90%;
+}
+.line1{
+font-size: 1.5rem;
+font-weight: initial;
+margin-bottom: 30px;
+color: #055346;
+}
+.line2{
+  font-size: 1rem;
+  font-weight:400;
+  margin-bottom: 25px;
+color: gray;
+}
+.btns a {
+  background: #ef7a54;
+  color: white;
+  border:1px solid #ef7a54;
+  font-weight: bold;
+  padding: 20px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btns a:hover {
+  background: white;
+  color: #ef7a54;
+}
+
+.image{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 50%;
+  height: 80%;
+  /* margin: 5px; */
+}
+
+
+.image img{
+  height: 500px;
+  width: 80%;
+  border-radius: 250px 250px 10px 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image img:hover{
+  transform: scale(1.05);
+
+}
+
+
+@media screen and (min-width: 128px) and (max-width: 900px) {
+  .header{
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-top: 0rem;
+  }
+  .container{
+    /* padding-top: 5px; */
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    height: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-heading{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .line1{
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .line2{
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .image{
+    width: 100%;
+height: 55%; 
+  }
+  
+  .image img{
+    width: 100%;
+    /* height: 50vh; */
+  }
+  .btns{
+   padding-bottom: 1rem;
+  }
+  .btns a{
+    padding: 15px;
+  }
+}

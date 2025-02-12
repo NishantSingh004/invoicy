@@ -1,0 +1,42 @@
+<article [class.menu]="meanValue">
+  <div class="container">
+    <div class="businessName">
+      <h5>{{ name }}</h5>
+    </div>
+
+    <div class="sub-container">
+      <div class="side">
+        <a (click)="closeSidebar()" routerLink="/app"
+          ><i class="bi bi-speedometer2"></i><span>Dashboard</span></a
+        >
+      </div>
+      <div class="side">
+        <a (click)="closeSidebar()" routerLink="/app/invoice"
+          ><i class="bi-receipt"></i> <span>Invoice</span></a
+        >
+      </div>
+      <div class="side">
+        <a (click)="closeSidebar()" routerLink="/app/quotation"
+          ><i class="bi-file-earmark icon"></i> <span>Quotation</span></a
+        >
+      </div>
+      <!-- <div (click)="onPofileClick()" class="side">
+        <a (click)="closeSidebar()" routerLink="/app/profile">
+          <i class="bi bi-person-circle"></i><span>Profile</span></a
+        >
+      </div> -->
+      @if(onPofileClick()){
+      <div class="side">
+        <a (click)="closeSidebar()"
+          ><i class="bi bi-eye"></i><span>View</span>
+        </a>
+      </div>
+      <div class="side">
+        <a (click)="closeSidebar()"
+          ><i class="bi bi-pencil-square"></i> <span>Edit</span></a
+        >
+      </div>
+      }
+    </div>
+  </div>
+</article>

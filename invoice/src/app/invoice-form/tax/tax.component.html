@@ -1,0 +1,64 @@
+<dialog open>
+  <div class="container">
+    <div class="heading">
+      <span>Configure Tax</span>
+    </div>
+
+    <form (ngSubmit)="onSave()">
+      <div class="taxs">
+        <div class="tax">
+          <label for="tax">Select Tax Type*</label>
+          <!-- <small class="small">Only one tax type per invoice</small> -->
+          <!-- <select name="tax" id="tax" class="custom-select" [(ngModel)]="gst">
+            <option value="" disabled>Select Tax Type</option>
+            @for(tax of tax; track tax){
+            <option [value]="tax">{{ tax }}</option>
+            }
+          </select> -->
+        </div>
+
+        <!-- Show additional fields for GST -->
+        <div class="gst">
+          <label for="checkbox">1. GST Type*</label>
+          <div class="gst-container">
+            <div>
+              <input
+                type="radio"
+                name="gstType"
+                id="igst"
+                value="IGST"
+                [(ngModel)]="igstTax"
+              />
+              <label for="igst">IGST</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="gstType"
+                id="cgst-sgst"
+                value="CGST&SGST"
+                [(ngModel)]="cgstTax"
+              />
+              <label for="cgst-sgst">CGST&SGST</label>
+            </div>
+            <div>
+              <label for="none">2.</label>
+              <input
+                type="radio"
+                name="gstType"
+                id="none"
+                value="NONE"
+                [(ngModel)]="none"
+              />
+              <label for="none">NONE</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button>Save</button>
+      </div>
+    </form>
+  </div>
+</dialog>

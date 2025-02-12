@@ -1,0 +1,50 @@
+
+article{
+  width: 300px;
+  height: 15rem;
+  background: #FFFAFA;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  z-index: 20;
+}
+.container{
+  width: 100%;
+  padding: 20px;
+}
+.name-email{
+  margin-bottom: 36px;
+    color: #055346;
+
+}
+.log-user span a{
+  text-decoration: none;
+  color: black;
+  color: gray;
+}
+.user{
+  margin-bottom: 10px;
+  color: gray;
+}
+.blogs{
+  width: 100%;
+  margin-top: 8px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  height: 2rem;
+}
+i{
+  margin-right: 20px;
+}
+.blogs ul{
+  display: flex;
+}
+.blogs ul li{
+  margin-right: 30px;
+}
+.blogs ul li a{
+  font-size: 0.8rem;
+  color: gray;
+  text-decoration: none;
+
+}

@@ -1,0 +1,11 @@
+article{
+height: 100vh;
+  background: #ebfffc;
+overflow-x: auto;
+}
+.container{
+display: flex;
+justify-content: center;
+gap: 2rem;
+}
+

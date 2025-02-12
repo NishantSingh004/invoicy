@@ -1,0 +1,70 @@
+<article>
+  <div class="main-container">
+    <div class="heading fade-in-start" appScrollAnimation>
+      <h1 class="fade-in-start" appScrollAnimation>Tools you need to run your business.</h1>
+      <p class="fade-in-start" appScrollAnimation>Accounting. Inventory. Leads and more.</p>
+    </div>
+    <div class="container fade-in-start" appScrollAnimation>
+      <div class="forms fade-in-start" appScrollAnimation>
+        <form [formGroup]="form">
+          <h2>Sign Up On Invoicy</h2>
+
+          <div>
+            <label for="Country">Country</label>
+            <select id="Country" formControlName="country">
+              <option value="" disabled>Select your Country</option>
+              @for (country of countries; track country) {
+                <option [value]="country">{{ country }}</option>
+              }
+            </select>
+            <small class="error" *ngIf="form.controls.country.touched && form.controls.country.invalid">
+              Please select your country.
+            </small>
+          </div>
+
+          <div>
+            <label for="name">Your Name</label>
+            <input type="text" formControlName="name" />
+            <small class="error" *ngIf="invalidName">
+              Name is required.
+            </small>
+          </div>
+
+          <div>
+            <label for="email">Your Email</label>
+            <input type="email" formControlName="email" />
+            <small class="error" *ngIf="invalidEmail">
+              Please enter a valid email.
+            </small>
+          </div>
+
+          <div class="form-inputs">
+            <label for="phone">Phone</label>
+            <input type="text" formControlName="phoneNumber" />
+            <small class="error" *ngIf="invalidPhone">
+              Phone number must be at least 9 digits long.
+            </small>
+          </div>
+
+          <div>
+            <input (change)="onCheckBox($event)" type="checkbox" />
+            <span>
+              I agree to the Invoicy <a href="">Terms of Service</a> and
+              <a href="">Privacy Policy</a>
+            </span>
+          </div>
+
+          <div class="button">
+            <button
+              (click)="navigateOnce()"
+              [disabled]="!checkBox || form.invalid"
+              type="submit"
+            >
+              Create Account
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</article>

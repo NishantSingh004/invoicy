@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="pricing-section">
+  <h1 class="fade-in-start" appScrollAnimation>Choose the Best Plan for Your Invoicing Needs</h1>
+  <p class="fade-in-start" appScrollAnimation>Create, manage, and share invoices effortlessly.</p>
+
+  <div class="pricing-container fade-in-start" appScrollAnimation>
+    <div *ngFor="let plan of plans" [ngClass]="{'card': true, 'premium': plan.premium}">
+      <h2>{{ plan.name }}</h2>
+      <p class="price fade-in-start" appScrollAnimation>{{ plan.price }}</p>
+      <ul class="features fade-in-start" appScrollAnimation>
+        <li *ngFor="let feature of plan.features">{{ feature }}</li>
+      </ul>
+      <button class="btn fade-in-start" appScrollAnimation [routerLink]="plan.routerLink">{{ plan.btnText }}</button>
+    </div>
+  </div>
+</div>

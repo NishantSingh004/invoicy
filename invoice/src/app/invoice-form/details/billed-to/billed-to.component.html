@@ -1,0 +1,47 @@
+<dialog open>
+  <div class="container">
+    <div class="heading">
+      <span>Business Details</span>
+    </div>
+    <form (ngSubmit)="onSave()">
+      <p>Basic Information</p>
+      <div class="columns">
+        <div class="comb">
+          <div class="Business-Name">
+          <label for="name">Client's Business Name *</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Business Name"
+            name="Business Name"
+            [(ngModel)]="businessName"
+          />
+        </div>
+        <div class="countries">
+          <label for="country">Select Country*</label>
+          <select name="country" id="country" [(ngModel)]="country">
+            <option value="" disabled>Select your Country</option>
+            @for(country of countries; track country){
+            <option [value]="country">{{ country }}</option>
+            }
+          </select>
+        </div>
+        </div>
+        
+        <div class="rate">
+          <label for="city">City/Town</label>
+          <input
+            id="city"
+            type="text"
+            placeholder="City/Town"
+            name="City"
+            [(ngModel)]="city"
+          />
+        </div>
+      </div>
+      <div class="buttons">
+        <button>Save</button>
+      </div>
+    </form>
+  </div>
+</dialog>

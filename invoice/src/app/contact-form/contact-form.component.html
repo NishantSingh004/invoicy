@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<div class="contact-container">
+  <div class="left-section fade-in-start" appScrollAnimation>
+    <h1 class=" fade-in-start" appScrollAnimation>Let’s talk</h1>
+    <p class=" fade-in-start" appScrollAnimation>We’d love to hear from you! Whether you have a question, need support, or just want to say hello, feel free to reach out.</p>
+    <!-- <div class="logos">
+        <i class="fab fa-google"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i>
+      </div> -->
+  </div>
+
+  <div class="form-container fade-in-start" appScrollAnimation>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <input type="text" formControlName="firstName" placeholder="First Name" required />
+      <div *ngIf="contactForm.controls['firstName'].invalid && contactForm.controls['firstName'].touched" class="error">
+        <small>    First name is required.
+        </small>
+      </div>
+
+      <input type="text" formControlName="lastName" placeholder="Last Name" required />
+      <div *ngIf="contactForm.controls['lastName'].invalid && contactForm.controls['lastName'].touched" class="error">
+         <small>Last name is required.</small>
+      </div>
+
+      <input type="email" formControlName="email" placeholder="Work Email" required />
+      <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" class="error">
+       <small>  Please enter a valid email.</small>
+      </div>
+
+      <input type="text" formControlName="phone" placeholder="Phone number (Optional)" />
+
+      <textarea formControlName="message" placeholder="Message" required></textarea>
+      <div *ngIf="contactForm.controls['message'].invalid && contactForm.controls['message'].touched" class="error">
+         <small>Message cannot be empty.</small>
+      </div>
+
+      <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>

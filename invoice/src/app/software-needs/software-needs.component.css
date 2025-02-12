@@ -1,0 +1,141 @@
+article{
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 4rem;
+  background: #ebfffc;
+  height: 500px;
+}
+
+.fade-in-start {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.container{
+  height: 100%;
+  text-align: center;
+}
+p{
+  color: gray;
+  font-size: 0.9rem;
+  font-weight: lighter;
+}
+h1{
+  color: #055346;
+
+}
+h5{
+  color: #055346;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.needs{
+  padding: 10px;
+  padding-top: 1rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.invoice{
+  margin-bottom: 4rem;
+  color: white;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: left;
+}
+.Quotation{
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: left;
+  color: white;
+
+}
+
+.EInvoices{
+  margin-bottom: 2rem;
+  color: white;
+
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: left;
+}
+.Access{
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  color: white;
+
+  text-align: left;
+}
+.first-need{
+  width: 40%;
+  padding: 10px;
+  color: white;
+
+}
+.second-need{
+  padding: 10px;
+  width: 40%;
+  color: white;
+
+}
+.line1{
+  font-size:2.8rem;
+}
+i{
+  color: #ef7a54;
+  font-size: 1.8rem;
+}
+@media screen and (min-width: 128px) and (max-width: 900px) {
+  article{
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+  }
+  .container{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+  }
+  .line1{
+    font-size:1.6rem;
+  }
+  .needs{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  .first-need{
+    width: 100%;
+  }
+  .second-need{
+    width: 100%;
+  }
+  .invoice{
+    margin-bottom: 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .Quotation{
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .EInvoices{
+    margin-bottom: 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .Access{
+    justify-content: center;
+    text-align: center;
+  }
+}

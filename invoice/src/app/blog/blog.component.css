@@ -1,0 +1,41 @@
+.blog-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f9efe6;
+  height: 100%;
+}
+.fade-in-start {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+  }
+  
+  /* Animation class (added dynamically) */
+  .fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+.upcoming-text {
+  font-size: 20px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.upcoming-img {
+  width: 300px;
+  margin-top: 20px;
+}
+@media screen and (min-width: 128px) and (max-width: 900px) {
+  .blog-container {
+    padding: 30px;
+  }
+
+  .upcoming-text {
+    font-size: 18px;
+  }
+
+  .upcoming-img {
+    width: 250px;
+    max-width: 90%;
+  }
+}

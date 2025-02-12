@@ -1,0 +1,142 @@
+body {
+    
+    background: #f9f9f9;
+}
+.fade-in-start {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+  }
+  
+  /* Animation class (added dynamically) */
+  .fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f9efe6 50%, #ebfffc 50%);
+    padding: 40px;
+}  
+
+
+.left-section {
+    color: #055346;
+    width: 40%;
+    padding-right: 50px;
+}
+
+.left-section h1 {
+    font-size: 36px;
+}
+
+.left-section p {
+    font-size: 16px;
+    color: gray;
+}
+
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    color: #ef7a54;
+}
+
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 80px;
+}
+
+button {
+    width: 100%;
+    background: #ef7a54;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ef7a54;
+
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.error{
+    color: red;
+    font-size: 0.5;
+}
+@media screen and (min-width: 128px) and (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .left-section {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .left-section h1 {
+        font-size: 28px;
+    }
+
+    .left-section p {
+        font-size: 14px;
+    }
+
+    .logos {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .form-container {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    input, textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

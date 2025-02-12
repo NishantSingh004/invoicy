@@ -1,0 +1,73 @@
+<article>
+  <div class="subnav">
+    <h4>Get Started with your business</h4>
+  </div>
+  <div class="main-container">
+    <div class="container">
+      <div class="sub-container">
+        <h5>Business Details</h5>
+        <form [formGroup]="form">
+  <div class="business-name">
+    <label for="business-name">1.Your Name/Business Name <span>*</span></label>
+    <small>Official Name used across Accounting documents and reports</small>
+    <input
+      type="text"
+      id="business-name"
+      placeholder="If you're a freelancer, add your personal name"
+      formControlName="business"
+    />
+    <small *ngIf="form.controls['business'].hasError('required') && form.controls['business'].touched" class="error">
+      Business name is required
+    </small>
+  </div>
+
+  <div class="phone-number-wrapper">
+    <label for="phone">2.Phone Number<span>*</span></label>
+    <div class="phone-input">
+      <input type="tel" id="phone" placeholder="Enter Your Phone Number" formControlName="phoneNumber" />
+    </div>
+    <small *ngIf="form.controls['phoneNumber'].hasError('required') && form.controls['phoneNumber'].touched" class="error">
+      Phone number is required
+    </small>
+  </div>
+
+  <div class="about">
+    <label for="business-date">3.In Business Since<span>*</span></label>
+    <small>Growing entrepreneur or an established business? Let people know!</small>
+    <input type="month" id="business-date" formControlName="businessSince" />
+    <small *ngIf="form.controls['businessSince'].hasError('required') && form.controls['businessSince'].touched" class="error">
+      Business start date is required
+    </small>
+  </div>
+
+  <div class="country-currency">
+    <div class="country">
+      <label for="country">4.Country<span></span></label>
+      <select id="country" formControlName="country">
+                  <option value="" disabled>Select your Country</option>
+                  @for(country of countries; track country){
+                  <option value="">{{ country }}</option>
+                  }
+                </select>
+      
+    </div>
+
+    <div class="currency">
+      <label for="currency">5.Currency<span></span></label>
+      <select id="currency" formControlName="currency">
+                  <option value="" disabled>select your currency</option>
+                  @for(currencies of currency; track currencies){
+                  <option value="">{{ currencies }}</option>
+                  }
+                </select>
+     
+    </div>
+  </div>
+
+  <button (click)="sendData()" [disabled]="form.invalid">Save and Continue</button>
+</form>
+
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,85 @@
+<dialog open>
+  <div class="container">
+    <div class="heading">
+      <span>Customise Rows</span>
+    </div>
+
+    @if(taxRow.igstTax || taxRow.cgstTax){
+
+    <form (ngSubmit)="onSubmit()">
+      <p>Row Items</p>
+      <div class="columns">
+        <div class="item">
+          <input
+            type="text"
+            placeholder="Items"
+            [(ngModel)]="items"
+            name="items"
+          />
+        </div>
+        <div class="quantity">
+          <input
+            type="text"
+            placeholder="Quantity"
+            [(ngModel)]="quantity"
+            name="quantity"
+          />
+        </div>
+        <div class="rate">
+          <input
+            type="text"
+            placeholder="Rate"
+            [(ngModel)]="rate"
+            name="rate"
+          />
+        </div>
+
+        <input type="text" placeholder="GST" [(ngModel)]="gst" name="gst" />
+      </div>
+      <div class="buttons">
+        <button>Save</button>
+      </div>
+    </form>
+    } @else if(taxRow.none){
+    <form (ngSubmit)="onSubmit()">
+      <p>Row Items</p>
+      <div class="columns">
+        <div class="item">
+          <input
+            type="text"
+            placeholder="Items"
+            [(ngModel)]="nonGst_items"
+            name="items"
+          />
+        </div>
+        <div class="quantity">
+          <input
+            type="text"
+            placeholder="Quantity"
+            [(ngModel)]="nongst_quantity"
+            name="quantity"
+          />
+        </div>
+        <div class="rate">
+          <input
+            type="text"
+            placeholder="Rate"
+            [(ngModel)]="nongst_rate"
+            name="rate"
+          />
+        </div>
+      </div>
+      <div class="buttons">
+        <button>Save</button>
+      </div>
+    </form>
+    }@else{
+    <form (ngSubmit)="onSubmit()">
+      <p>Please Add Tax Type</p>
+      <div class="buttons">
+        <button>Cancel</button>
+      </div>
+    </form>
+    }
+  </div>
+</dialog>

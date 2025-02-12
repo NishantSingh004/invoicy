@@ -1,0 +1,15 @@
+<router-outlet></router-outlet>
+
+<!-- Display navbar, header, and dashboard only if `isFullscreen` is false -->
+@if(!isFullscreen){
+<app-navbar></app-navbar>
+<main>
+  <app-header></app-header>
+  <app-dashboard></app-dashboard>
+  <!-- <app-accounting></app-accounting> -->
+  <app-software-needs></app-software-needs>
+  <app-faq></app-faq>
+  <app-cta-banner></app-cta-banner>
+  <app-footer></app-footer>
+</main>
+}

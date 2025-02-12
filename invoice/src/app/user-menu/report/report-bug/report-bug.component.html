@@ -1,0 +1,70 @@
+<article>
+  <div class="container">
+    <div class="head">
+      <div class="heading">
+        <p>Report A Bug</p>
+      </div>
+      <div class="subheading">
+        <small
+          >Report any bug or issue that you might be facing on Invoice. We are
+          here to help!</small
+        >
+      </div>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+      <div class="textarea">
+        <div class="text">
+          <input
+            type="text"
+            id="title"
+            placeholder="Short, descriptive title"
+            name="title"
+            [(ngModel)]="title"
+          />
+
+          <label for="description">Description</label>
+
+          <textarea
+            id="textarea"
+            rows="5"
+            placeholder="Any additional details..."
+            name="text"
+            [(ngModel)]="text"
+          ></textarea>
+
+          <div class="bottom">
+            <button class="cancel" type="button" (click)="onClear()">
+              Cancel
+            </button>
+            <button class="submit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="post">
+      <div class="header">
+        <h3>Posts</h3>
+      </div>
+      <div class="contents">
+        <div class="para">
+          <ng-container *ngFor="let task of tasks">
+            <div class="task">
+              <div class="title">
+                <div class="subTitle">
+                  <h3>{{ task.title }}</h3>
+                </div>
+                <div class="del">
+                  <span (click)="cleanTask(task.id)">
+                    <i class="bi bi-trash"></i>
+                  </span>
+                </div>
+              </div>
+
+              <p>{{ task.text }}</p>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

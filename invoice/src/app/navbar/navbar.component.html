@@ -1,0 +1,51 @@
+<nav>
+  <!-- @if(register){
+  <app-register></app-register>
+  } -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-3">
+        <div class="logo-container">
+          <ul>
+            <i class="bi-receipt logo"></i>
+
+            <a href="" class="logo"><h2>Invoicy</h2></a>
+          
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-9 col-9 text-end">
+        <div class="menu-icon" (click)="onSelectMenu()">
+          <i class="bi bi-list"></i>
+        </div>
+        <div class="desktop-menu" [class.mobile_menu]="menuValue">
+          <ul>
+            <!-- <li>
+              <a (click)="onNavLinkClick()" href="#">Features</a>
+            </li>
+            <li>
+              <a (click)="onNavLinkClick()" href="#">Login</a>
+            </li> -->
+            <ul>
+              <li>
+                <a routerLink="/pricing"><p>Pricing</p></a>
+              </li>
+              <li>
+                <a routerLink="/blog"><p>Blog</p></a>
+              </li>
+              <li>
+                <a routerLink="/contact"><p>Contact</p></a>
+              </li>
+            </ul>
+            <a
+              routerLink="/register"
+              (click)="onNavLinkClick()"
+              class="register"
+              >Register</a
+            >
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,37 @@
+<!-- <div class="backdrop" (click)="profileClick()"></div> -->
+<nav>
+  <div class="logo-container">
+    <div class="menu-icon" (click)="menuClick()">
+      <i class="bi bi-list"></i>
+    </div>
+    <div class="logo-container">
+      <ul>
+        <div class="sub-logo">
+          <i class="bi-receipt logo"></i>
+  
+          <a href="" class="logo"><h2>Invoicy</h2></a>
+        </div>
+       
+        
+      </ul>
+    </div>
+    
+  </div>
+
+  <div class="desktop-menu">
+    <ul>
+      <li><a class="report" routerLink="/report">Report an issue</a></li>
+      <li>
+        <a href="#"><i class="bi bi-clock"></i></a>
+      </li>
+
+      <li>
+        <a (click)="notificationClick()"><i class="bi bi-bell"></i></a>
+      </li>
+
+      <li>
+        <a (click)="profileClick()"><i class="bi bi-person-circle"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>

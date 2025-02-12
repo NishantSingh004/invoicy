@@ -1,0 +1,78 @@
+.cta-container {
+  background: #f9efe6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  text-align: center;
+  color: #055346;
+}
+.fade-in-start {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+/* Animation class (added dynamically) */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: gray;
+}
+
+.cta-button {
+  background: #ef7a54;
+  color: white;
+  border:1px solid #ef7a54;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background: white;
+  color: #ef7a54;}
+
+  @media screen and (min-width: 128px) and (max-width: 900px) {
+    .cta-container {
+      height: auto; /* Adjust height for smaller screens */
+      padding: 30px 15px; /* Add padding to prevent content from touching edges */
+      text-align: center;
+    }
+  
+    h1 {
+      font-size: 2rem; /* Decrease font size for smaller screens */
+      margin-bottom: 8px;
+    }
+  
+    p {
+      font-size: 1rem; /* Adjust font size for readability */
+      margin-bottom: 15px;
+    }
+  
+    .cta-button {
+      padding:15px; /* Adjust button padding */
+      
+    }
+  
+    .fade-in-start {
+      transform: translateY(30px); /* Adjust animation effect */
+    }
+  }
+  

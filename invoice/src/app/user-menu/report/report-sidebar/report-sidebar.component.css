@@ -1,0 +1,41 @@
+article{
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  
+}
+
+.container{
+  padding: 20px;
+}
+
+.head{
+  padding-left: 2.2rem;
+  color: #055346;
+}
+li{
+  list-style: none;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+    
+
+}
+li:hover{
+  background:#ef7a54;
+  color: white;
+
+}
+a{
+  display: block;
+  text-decoration: none;
+  margin-right: 150px;
+  font-weight:300;
+  width: 100%;
+  color: #066959;
+}
+
+a:hover{
+  /* color:white; */
+}

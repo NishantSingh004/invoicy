@@ -1,0 +1,139 @@
+.faq-container {
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #055346;
+
+}
+
+.fade-in-start {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+/* Animation class (added dynamically) */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.faq-item {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 50%;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 15px 15px 5px 15px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    color: #055346;
+
+}
+
+.faq-answer {
+  padding: 5px 5px 5px 15px;
+  text-align: left;
+  font-size: 14px;
+  color: gray;
+}
+
+.faq-answer.ng-trigger {
+  display: block;
+}
+
+.cta-button {
+  background: #ef7a54;
+  color: white;
+  border:1px solid #ef7a54;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background: white;
+  color: #ef7a54;}
+
+
+
+@media screen and (min-width: 128px) and (max-width: 900px) {
+  .faq-container {
+    background-color: white;
+    width: 100%; /* Adjusted for better responsiveness */
+    padding: 25px 15px 15px 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .faq-item {
+    margin-top: 10px;
+    /* border: 1px solid #ddd; */
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%; /* Adjusted to take full width on small screens */
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px; /* Reduced for smaller screens */
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-answer {
+    padding: 10px;
+    text-align: left;
+    font-size: 13px; /* Adjusted for better readability */
+  }
+
+  .cta-button {
+    background-color: #6200ea;
+    color: white;
+    padding: 12px; /* Reduced padding for smaller screens */
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px; /* Adjusted for smaller screens */
+    width: 90%; /* Ensuring button adapts to smaller screens */
+  }
+
+  .cta-button:hover {
+    background-color: #4500b5;
+  }
+}

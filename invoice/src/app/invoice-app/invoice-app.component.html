@@ -1,0 +1,42 @@
+<app-app-navbar
+  [menuValu]="menuValue"
+  (menuOut)="onMenuClick($event)"
+  (profileclicked)="onPerson($event)"
+  (notificationClicked)="onNotification($event)"
+/>
+<article class="layout">
+  @if(menuValue){
+  <div class="sidebar">
+    <app-side-bar
+      [meanValue]="menuValue"
+      (closeSideBarEvent)="onSidebarClose($event)"
+    />
+  </div>
+  }
+
+  <div class="container">
+    <div class="non-sidebar">
+      <ng-container>
+        <router-outlet></router-outlet>
+      </ng-container>
+      <ng-template>
+        <app-after-registration></app-after-registration>
+      </ng-template>
+    </div>
+  </div>
+</article>
+
+<div class="user-name">
+  @if(profile){
+  <div class="user-menu">
+    <app-user-menu />
+  </div>
+  }
+</div>
+<div class="user-notification">
+  @if(notification){
+  <div class="notification">
+    <app-notifications />
+  </div>
+  }
+</div>

@@ -1,0 +1,78 @@
+article{
+  background: #f9efe6;
+  height: 120vh;
+  width: 250px;
+  position: static;
+  z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+top: 0;
+}
+.container{
+  padding: 20px;
+}
+.businessName{
+  padding: 5px;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+   
+}
+.businessName h5{
+  font-size: 1rem;
+ 
+}
+
+.sub-container{
+padding: 10px;
+margin-top: 10px;
+}
+i{
+  margin-right:20px ;
+}
+.side{
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.side:hover{
+  background-color: #ebfffc;
+  border-radius: 5px;
+  
+}
+
+.sub-container span{
+  width: 100%;
+}
+a{
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  color: #178582;
+
+}
+a:hover{
+  color: #ef7a54;
+}
+
+
+@media screen and (min-width: 128px) and (max-width: 900px) {
+  article{
+    position: fixed;
+    transition: 0.4s ease-in-out;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+  }
+  .menu{
+   left: 0px;
+   transition: 0.4s ease-in-out;
+  }
+  .container{
+    height: 100%;
+  }
+  .businessName{
+    margin-top: 3rem;
+  }
+}
